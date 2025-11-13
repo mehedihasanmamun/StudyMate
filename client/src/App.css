@@ -1,42 +1,55 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.gradient-border {
+  position: relative;
+  border-radius: 14px;
+  z-index: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+
+  /* Bigger gradient movement space */
+  background: linear-gradient(
+    180deg,
+    #a87300,
+    #ff1cf7,
+    #00f0ff,
+    #8a2be2,
+    #ffae00
+  );
+
+  background-size: 100% 400%;
+
+  /* Fast animation */
+  animation: rotateGradient 5s linear infinite;
+
+  z-index: -1;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: white;
+  z-index: -1;
+}
+
+/* Faster and smoother vertical rotating gradient */
+@keyframes rotateGradient {
+  0% {
+    background-position: 50% 0%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+button {
+  cursor: pointer;
 }
