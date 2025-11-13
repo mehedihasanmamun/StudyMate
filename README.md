@@ -5,7 +5,7 @@
 ## Links:
 
 - **Live Site:** [https://game-hub-apps.netlify.app/)
-- **Client Repo:** [https://github.com/nahiyankhan55/b12a10-web](https://github.com/mehedihasanmamun/Game-hub.git)
+- **Client Repo:** [https://github.com/mehedihasanmamun/Game-hub.git)
 
 ---
 
